@@ -15,14 +15,39 @@
     <img id="previewImage" width="300" ></img>
     <button onClick="show()">팝업 띄우기</button>
     <button onClick="getTodoItems()">api호출</button>
+    <button onClick="makeElement()">배열만들기</button>
+    <div id="ulParent"></div>
+
+    <div class="test">
+      <div id="box">
+        <p>
+          <p class="test"> 이거 뽑지마세요</p>
+        </p>
+        <p>
+          <p class="test"> 이거 뽑아주세요1</p>
+        </p>
+        <ul class="testUl">
+          <li>1</li>
+          <li>1이거 뽑아주세요</li>
+          <li>1</li>
+          <ul class="testUl">
+            <li>2</li>
+            <li>2</li>
+            <li>3이거 뽑아주세요</li>
+            <li>2</li>
+          </ul>
+        </ul>
+      </div>
+    </div>
+
     <div class="background">
         <div class="window">
           <div class="popup"><div>
             <button onClick="popupClose()">팝업닫기</button>
         <div>
       <div>
-      
+     
 </body>
 <script src="app.js"></script>
 <script src="1.js"></script>
-</html>
+</html>+
