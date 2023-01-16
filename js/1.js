@@ -21,6 +21,32 @@ function popupClose() {
   document.querySelector(".background").className = "background";
 }
 
+const create2DArray = (rows, columns) => {
+  const arr = Array.from({ length: rows }, (v, i) => i);
+  for (var i = 0; i < rows; i++) {
+    arr[i] = Array.from({ length: columns }, (v, i) => i);
+  }
+  return arr;
+};
+
+const makeElement = () => {
+  const ulParent = document.getElementById("ulParent");
+  let arr = create2DArray(3, 4);
+  arr.map((row, rowIdx) => {
+    const newUL = document.createElement("ul");
+    // newUL.setAttribute('id', 'ul' + rowIdx);
+    newUL.innerText = rowIdx;
+    ulParent.appendChild(newUL);
+    row.map((col, colIdx) => {
+      const newli = document.createElement("li");
+      newli.innerText = col;
+      // const liParent = document.getElementById('ul' + rowIdx);
+      // liParent.appendChild(newli);
+      newUL.appendChild(newli);
+    });
+  });
+};
+
 //1. 쿼리셀렉터
 let a = document.querySelectorAll("P.test")[1].innerHTML;
 console.log(a);
