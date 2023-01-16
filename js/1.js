@@ -72,7 +72,16 @@ const API = [
 ];
 
 const setAPIElements = () => {
-  const objectParent = document.querySelector("#objectParent");
-
-  objectParent.innerHTML = console.log();
+  API.map((parent, rowIdx) => {
+    const newUl = document.createElement("ul");
+    newUl.innerText = `id : ${parent.id}`;
+    objectParent.appendChild(newUl);
+    Object.entries(parent).map(([key, value]) => {
+      if (key != "id") {
+        const newLi = document.createElement("li");
+        newLi.innerText = `${key}: ${value}`;
+        newUl.appendChild(newLi);
+      }
+    });
+  });
 };
